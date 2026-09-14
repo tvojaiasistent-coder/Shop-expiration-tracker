@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Shop Expiration Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Shop Expiration Tracker</h1>
+      <p>Track food, drinks and other stock before it expires.</p>
+    </div>
+    <button id="addBtn" class="primary">+ Add product</button>
+  </header>
+
+  <main class="container">
+    <section class="cards">
+      <div class="card"><span>All products</span><strong id="allCount">0</strong></div>
+      <div class="card danger"><span>Expired</span><strong id="expiredCount">0</strong></div>
+      <div class="card warning"><span>≤ 3 days</span><strong id="threeCount">0</strong></div>
+      <div class="card soon"><span>≤ 7 days</span><strong id="sevenCount">0</strong></div>
+    </section>
+
+    <section class="toolbar">
+      <input id="search" placeholder="Search product or barcode…">
+      <select id="statusFilter">
+        <option value="all">All statuses</option>
+        <option value="expired">Expired</option>
+        <option value="3">Expires in 3 days</option>
+        <option value="7">Expires in 7 days</option>
+        <option value="ok">More than 7 days</option>
+      </select>
+      <select id="categoryFilter"><option value="all">All categories</option></select>
+    </section>
+
+    <section class="tableWrap">
+      <table>
+        <thead>
+          <tr><th>Product</th><th>Category</th><th>Qty</th><th>Expiration</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="productRows"></tbody>
+      </table>
+      <div id="empty" class="empty">No products found.</div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modalBox">
+      <div class="modalHead"><h2 id="modalTitle">Add product</h2><button id="closeBtn" class="icon">×</button></div>
+      <form id="productForm">
+        <input type="hidden" id="editId">
+        <label>Product name<input id="name" required placeholder="e.g. Milk 1L"></label>
+        <div class="grid2">
+          <label>Barcode<input id="barcode" placeholder="Scan or type barcode"></label>
+          <label>Category<input id="category" required placeholder="Drinks, Dairy, Snacks…"></label>
+        </div>
+        <div class="grid2">
+          <label>Quantity<input id="quantity" type="number" min="0" required></label>
+          <label>Expiration date<input id="expiry" type="date" required></label>
+        </div>
+        <label>Shelf / location<input id="location" placeholder="e.g. A3"></label>
+        <div class="formActions"><button type="button" id="scanBtn" class="secondary">📷 Scan barcode</button><button class="primary" type="submit">Save product</button></div>
+        <p id="scanNote" class="note"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
