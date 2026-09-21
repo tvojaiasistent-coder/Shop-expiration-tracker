@@ -1,9 +1,7 @@
-# Shop Expiration Tracker V2
+# Shop Expiration Tracker V4
 
-Supabase-backed version of the shop expiration tracker.
+Supabase-backed shop expiration tracker with secure RLS, expiration alerts, and fast barcode stock entry.
 
-Features: login, shared cloud inventory, product/batch expiration dates, dashboard, filters, barcode scanning where supported, and mobile-friendly UI.
+V4 flow: scan/type barcode -> find existing product -> enter quantity and expiry -> save a new batch. If the barcode is new, enter product details once. Existing products can therefore have multiple expiration batches.
 
-The browser app uses the Supabase **publishable** key. Never put a Supabase secret/service-role key in browser code.
-
-Deploy the contents of this folder to Vercel. Your existing Vercel project can redeploy automatically after the GitHub files are replaced.
+Deploy by replacing the files in the connected GitHub repository. No new SQL migration is required for V4.

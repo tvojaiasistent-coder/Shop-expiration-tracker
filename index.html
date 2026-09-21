@@ -13,7 +13,7 @@
       <h1>Shop Expiration Tracker</h1>
       <p>Track food, drinks and other stock before it expires.</p>
     </div>
-    <div><span id="userLabel"></span> <button id="logoutBtn" class="secondary">Log out</button> <button id="addBtn" class="primary">+ Add product</button></div>
+    <div><span id="userLabel"></span> <button id="logoutBtn" class="secondary">Log out</button> <button id="quickBtn" class="primary">⚡ Quick stock entry</button></div>
   </header>
 
   <main class="container">
@@ -54,7 +54,7 @@
 
   <div id="modal" class="modal hidden">
     <div class="modalBox">
-      <div class="modalHead"><h2 id="modalTitle">Add product</h2><button id="closeBtn" class="icon">×</button></div>
+      <div class="modalHead"><h2 id="modalTitle">Quick stock entry</h2><button id="closeBtn" class="icon">×</button></div>
       <form id="productForm">
         <input type="hidden" id="editId">
         <label>Product name<input id="name" required placeholder="e.g. Milk 1L"></label>
@@ -67,8 +67,8 @@
           <label>Expiration date<input id="expiry" type="date" required></label>
         </div>
         <label>Shelf / location<input id="location" placeholder="e.g. A3"></label>
-        <div class="formActions"><button type="button" id="scanBtn" class="secondary">📷 Scan barcode</button><button class="primary" type="submit">Save product</button></div>
-        <p id="scanNote" class="note"></p>
+        <div class="formActions"><button type="button" id="scanBtn" class="secondary">📷 Scan barcode</button><button type="button" id="lookupBtn" class="secondary">🔎 Find product</button><button class="primary" type="submit">Save stock</button></div>
+        <p id="scanNote" class="note"></p><p id="matchNote" class="matchNote"></p>
       </form>
     </div>
   </div>
