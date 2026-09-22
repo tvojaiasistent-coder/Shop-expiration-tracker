@@ -3,3 +3,10 @@
 
 .alerts{background:white;border-radius:14px;box-shadow:0 2px 8px #0000000d;margin:20px 0;padding:18px}.alertsHead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.alertsHead h2{margin:0;font-size:18px}.alertsHead p{margin:4px 0 0;color:#64748b;font-size:13px}.alertsHead span{color:#64748b;font-size:12px}.alertList{display:grid;gap:8px}.alertItem{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 12px;border:1px solid #eef0f2;border-radius:10px}.alertItem strong{display:block;font-size:14px}.alertItem small{display:block;color:#64748b;margin-top:3px}.noAlerts{padding:12px;color:#166534;background:#f0fdf4;border-radius:10px;font-size:13px}
 .matchNote{margin:8px 0 0;padding:9px 11px;border-radius:9px;background:#f3f4f6;font-size:13px}.matchNote.found{background:#ecfdf5;color:#065f46}.matchNote.new{background:#eff6ff;color:#1e40af}.matchNote.warn{background:#fff7ed;color:#9a3412}.formActions{flex-wrap:wrap}
+
+/* V5 scanner layout: keep the camera visible while the form can scroll */
+.modal { overflow-y:auto; align-items:flex-start; }
+.modalBox { max-height:calc(100dvh - 24px); overflow-y:auto; margin:auto; }
+#scanNote { margin-top:12px; }
+#scanNote video { display:block; width:100% !important; height:min(45vh,360px) !important; min-height:220px; object-fit:cover; background:#000; border-radius:12px; }
+@media (max-width:700px){ .modal{padding:12px;} .modalBox{max-height:calc(100dvh - 24px); padding:18px;} #scanNote video{height:42vh !important; min-height:210px;} .formActions{flex-wrap:wrap;} }
